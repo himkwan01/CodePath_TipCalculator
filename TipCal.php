@@ -15,7 +15,7 @@
              address field
              another method is post -->
             <div style="background-color:lightblue;width:300px;height:300px;border:5px solid #cccccc;padding:10px;">
-        <form action="form.php" method="post" style="background-color:lightyellow;margin:auto;border:5px solid black;padding:10px;">
+        <form action="tipcal.php" method="post" style="background-color:lightyellow;margin:auto;border:5px solid black;padding:10px;">
 
             <!-- fieldset is used to group related data in the form -->
 
@@ -56,10 +56,12 @@
                 $subtotal=(double)$_POST["subtotal"];
                 $percentage=(double)$_POST["percentage"];
                 if((string)$subtotal==$_POST["subtotal"]){
-                    $tip=$subtotal*$percentage;
-                    $total=$subtotal+$tip;
-                    echo "tip = \$$tip<br>";
-                    echo "total = \$$total<br>";
+                    if($subtotal>0){
+                        $tip=$subtotal*$percentage;
+                        $total=$subtotal+$tip;
+                        echo "tip = \$$tip<br>";
+                        echo "total = \$$total<br>";
+                    }
                 }
             }
         ?>
