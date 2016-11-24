@@ -24,5 +24,6 @@ Add Optional feature - Custome tips
     - create one more radio button      ~ 5 mins
     - create a text after that          ~ 5 mins
     - if custom button is selected,     ~ 10 mins
-        assign the value in the textfield to $percentage
+      assign the value in the textfield 
+      to $percentage
     - validation and change color       ~ 10 mins
