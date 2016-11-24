@@ -1,6 +1,6 @@
-# Pre-work - *Name of App Here*
+# Pre-work - *TipCal*
 
-**Name of your app** is a tip calculator PHP page.
+**TipCal** is a tip calculator PHP page.
 
 Submitted by: Tsz Him Kwan
 
