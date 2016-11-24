@@ -21,23 +21,33 @@
         <!-- default method is get, submitted data will be visible in the page
              address field
              another method is post -->
-            <div style="background-color:lightblue;width:300px;height:300px;border:5px solid #cccccc;padding:10px;">
+            <div style="background-color:lightblue;width:320px;height:400px;border:5px solid #cccccc;padding:10px;">
         <form action="Tipcal.php" method="post" style="background-color:lightyellow;margin:auto;border:1px solid black;padding:10px;">
-                <?php
-                    // set up subtotal text percentage for output
-                    $subtotal_text=$_POST?(double)$_POST["subtotal"]:"";
-                    $percentage=$_POST?(double)$_POST["percentage"]*100:10;
+                <?php 
+                    $subtotal_text=$_POST?(double)$_POST["subtotal"]:1;
+                    $percentage=$_POST?$_POST["percentage"]*100:10;
+                    $cPercentage=$percentage=="OTHER"?(double)$_POST["cPercentage"]:"";
                 ?>
                 <center><h1>Tip Calculator<br></h1></center>
                 <!-- one line text input field -->
-                <p><font color=<?php echo ((double)$subtotal_text>0 || (string)$subtotal_text=="")? "black":"red"; ?>>Bill subtotal: $
+                
+                <p>
+                <font color=
+                <?php echo ((double)$subtotal_text>0 || 
+                    (string)$subtotal_text=="")? "black":"red"; ?>
+                >
+                Bill subtotal: $
                 
                 <input type="text" name="subtotal" 
                 value='<?php echo $subtotal_text ?>'
                 size="8"><br></p>
 
                 <!-- radio button -->
-                <p><font color=black>Tip percentage:<br></p>
+                <p><font color=
+                <?php echo ((double)$cPercentage>0 || 
+                (string)$cPercentage=="")?"black":"red"; ?>
+                >
+                Tip percentage:<br>
 
                 <!-- display the radio button with a for loop -->
                 <?php 
@@ -52,7 +62,15 @@
                         echo $radio[$i];
                         echo "%";
                     }
+                    echo '<input type="radio" name="percentage" value="OTHER" ';
+                    if((string)$cPercentage!="")echo 'checked';
+                    echo '>';
                 ?>
+                Custom
+                <!-- custome button -->
+                <input type="text" name="cPercentage"
+                value='<?php echo $cPercentage ?>' size="3">%
+                </p>
                 <br>
                 <!-- submit button -->
                 <center><input type="submit" value="Submit"></center>
@@ -65,8 +83,10 @@
             if($_POST){
                 
                 $subtotal=(double)$_POST["subtotal"];
-                $percentage=(double)$_POST["percentage"];
-                if((string)$subtotal==$_POST["subtotal"]){
+                $percentage=($_POST["percentage"]=="OTHER"?
+                            (double)$_POST["cPercentage"]/100:$_POST["percentage"]);
+                if((string)$subtotal==$_POST["subtotal"] && 
+                    (double)$percentage>0){
                     if($subtotal>0){
                         $tip=$subtotal*$percentage;
                         $total=$subtotal+$tip;
