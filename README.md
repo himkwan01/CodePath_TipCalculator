@@ -2,7 +2,7 @@
 
 **Name of your app** is a tip calculator PHP page.
 
-Submitted by: **Your Name Here**
+Submitted by: Tsz Him Kwan
 
 Time spent: **X** hours spent in total
 
