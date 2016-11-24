@@ -1,0 +1,20 @@
+11-23-2016 ~ 4 hours
+create tipcal project
+learn about the html and php syntax
+    - form
+    - simple out
+    - condition
+    - output format (color, size)
+Start to build tipcal
+    - basic output structure            ~ 1 hour
+    - get input                         ~ 15 mins
+    - validate input(basic)             ~ 10 mins
+    - correct output                    ~ 30 mins
+    - arrange output layout             ~ 1 hour
+    - display previous output           ~ 1 hour
+
+11-24-16 ~ 2 hours
+Improve the output
+    - change color if input is invalid  ~ 45 mins
+    - get previos percentage selected   ~ 45 mins
+    - documentation                     ~ 15 mins

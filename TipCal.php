@@ -9,28 +9,35 @@
     <body>
 
         <!-- declare an array for radio button -->
-        <?php $radio=array(10,15,20);?>
+        <?php
+            // declare variable and initialize
+            $radio=array(10,15,20);
+            $subtotal=0;
+            $percentage=0.1;
+            $valid=true;
+            $subtotal_text="";
+        ?>
 
         <!-- default method is get, submitted data will be visible in the page
              address field
              another method is post -->
             <div style="background-color:lightblue;width:300px;height:300px;border:5px solid #cccccc;padding:10px;">
-        <form action="tipcal.php" method="post" style="background-color:lightyellow;margin:auto;border:5px solid black;padding:10px;">
-
-            <!-- fieldset is used to group related data in the form -->
-
-
-                <!-- legend defines a caption for the <fieldset> element -->
+        <form action="Tipcal.php" method="post" style="background-color:lightyellow;margin:auto;border:1px solid black;padding:10px;">
+                <?php
+                    // set up subtotal text percentage for output
+                    $subtotal_text=$_POST?(double)$_POST["subtotal"]:"";
+                    $percentage=$_POST?(double)$_POST["percentage"]*100:10;
+                ?>
                 <center><h1>Tip Calculator<br></h1></center>
-
                 <!-- one line text input field -->
-                <p style="color:#CC33CC">Bill subtotal: $
+                <p><font color=<?php echo ((double)$subtotal_text>0 || (string)$subtotal_text=="")? "black":"red"; ?>>Bill subtotal: $
+                
                 <input type="text" name="subtotal" 
-                value='<?php echo $_POST?(double)$_POST["subtotal"]:"" ?>'
+                value='<?php echo $subtotal_text ?>'
                 size="8"><br></p>
 
                 <!-- radio button -->
-                <p>Tip percentage:<br></p>
+                <p><font color=black>Tip percentage:<br></p>
 
                 <!-- display the radio button with a for loop -->
                 <?php 
@@ -38,7 +45,10 @@
                         echo '<input type="radio" ';
                         echo 'name="percentage" ';
                         echo 'value='.$radio[$i]/100;
-                        echo !$i?' checked>':'>';
+                        if($radio[$i]==$percentage){
+                            echo " checked";
+                        }
+                        echo '>';
                         echo $radio[$i];
                         echo "%";
                     }
@@ -53,18 +63,28 @@
         <!-- evaluate the input -->
         <?php
             if($_POST){
+                
                 $subtotal=(double)$_POST["subtotal"];
                 $percentage=(double)$_POST["percentage"];
                 if((string)$subtotal==$_POST["subtotal"]){
                     if($subtotal>0){
                         $tip=$subtotal*$percentage;
                         $total=$subtotal+$tip;
-                        echo "tip = \$$tip<br>";
-                        echo "total = \$$total<br>";
+                        printf ("tip = \$%.2f<br>",$tip);
+                        printf ("total = \$%.2f<br>",$total);
                     }
+                    // non-positive number
+                    else{
+                        $valid=false;
+                    }
+                }
+                // not number
+                else{
+                    $valid=false;
                 }
             }
         ?>
+
         </form>
         </div>
     </body>
