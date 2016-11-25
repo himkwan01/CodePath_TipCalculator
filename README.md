@@ -4,7 +4,7 @@
 
 Submitted by: Tsz Him Kwan
 
-Time spent: **X** hours spent in total
+Time spent: 8 hours spent in total
 
 ## User Stories
 
@@ -18,7 +18,7 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 * [x] Add support for custom tip percentage
-* [ ] Add support for splitting the tip and total
+* [x] Add support for splitting the tip and total
 
 The following **additional** features are implemented:
 
