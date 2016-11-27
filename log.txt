@@ -13,13 +13,13 @@ Start to build tipcal
     - arrange output layout             ~ 1 hour
     - display previous output           ~ 1 hour
 
-11-24-16 ~ 2 hours
+11-24-2016 ~ 2 hours
 Improve the output
     - change color if input is invalid  ~ 45 mins
     - get previos percentage selected   ~ 45 mins
     - documentation                     ~ 15 mins
 
-11-24-16 ~ 30 mins
+11-24-2016 ~ 30 mins
 Add Optional feature - Custome tips
     - create one more radio button      ~ 5 mins
     - create a text after that          ~ 5 mins
@@ -28,9 +28,15 @@ Add Optional feature - Custome tips
       to $percentage
     - validation and change color       ~ 10 mins
 
-11-24-16 ~ 1 hour
+11-24-2016 ~ 1 hour
 Add optional feature - Split
     - Create new textfield              ~ 5 mins
     - validtion of split                ~ 40 mins
     - create a div for output           ~ 10 mins
 
+11-26-2016 ~ 1 hour
+Add hover text for input format
+    - learn how to use hover            ~ 10 mins
+    - use it in the tip calculator      ~ 20 mins
+    - Improve design                    ~ 20 mins
+    - Add header and footer             ~ 10 mins

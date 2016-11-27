@@ -6,7 +6,45 @@
   <meta charset="utf-8" />
   <title>CodePath - Tip Calculator</title>
   <style>
-    #outter-panel{
+    .tooltip{
+        position:relative;
+        display:inline-block;
+    }
+    .tooltip .tooltiptext{
+        visibility:hidden;
+        width:120px; 
+        background-color:#F5ECCE;
+        text-align:center;
+        border-radius:6px;
+        color:black;
+        /* position the tooltip */
+        position:absolute;
+        z-index:1;
+        opacity:0;
+        transition:2s;
+    }
+    .tooltip:hover .tooltiptext{
+        visibility:visible;
+        opacity:1;
+    }
+    h1{
+      margin:10px;
+    }
+    p{
+      margin:10px 5px;
+    }
+    div.header{
+        text-align:center;
+        background-color:gray;
+        color:white;
+        width:360px;
+    }
+    div.footer{
+        text-align:center;
+        background-color:white;
+        width:360px;
+    }
+    div.outter-panel{
       background-color:lightblue;
       width:320px;
       height:400px;
@@ -15,7 +53,7 @@
     }
 
     #inner-form{
-      background-color:lightyellow;
+      background-color:white;
       margin:auto;
       border:1px solid black;
       padding:15px;
@@ -24,6 +62,9 @@
       margin:auto;
       border:1px solid blue;
       padding:15px;
+    }
+    p{
+      width:300px;
     }
   </style>
 </head>
@@ -42,7 +83,8 @@
 
   <!-- default method is get, submitted data will be visible in the page address
        field another method is post -->
-  <div id="outter-panel">
+  <div class="header">Codepaht pre-work Tip Calculator</div>
+  <div class="outter-panel">
   <form id="inner-form" action="Tipcal.php" method="post">
     <?php 
     // get previous value if any
@@ -55,17 +97,18 @@
     <center><h1>Tip Calculator<br></h1></center>
 
     <!-- subtotal texfield if previoud input is invalid, change color to red -->
-    <p>
+    <p class="tooltip">
     <font color=<?php echo ((double)$subtotal_text>0 || 
                           (string)$subtotal_text=="")? "black":"red"; ?>
     >
-      Bill subtotal: $      
+      Bill subtotal: $
       <input type="text" name="subtotal" value='<?php echo $subtotal_text ?>'
-          size="8"><br>
+          size="5">&nbsp
+          <span class="tooltiptext">Positive number!</span> 
     </p> <!-- subtotal textfield ends -->
 
     <!-- radio buttons if input is invalid, change color to red -->
-    <p>
+    <p class="tooltip">
     <font color=
     <?php echo ((double)$cPercentage>0 || 
         (string)$cPercentage=="")?"black":"red"; ?>
@@ -99,15 +142,18 @@
       <!-- custome textfield -->
       <input type="text" name="cPercentage" 
               value='<?php echo $cPercentage ?>' size="3">
-      %
+      %&nbsp
+      <span class="tooltiptext">Positive number!</span>
+      
     </p> <!-- tip percentage radio buttons ends -->
-
     <!-- split textfield if previous input is invalid, change color to red -->
-    <p style="margin:auto">
+    <p class="tooltip">
     <font color=<?php echo $split>0?"black":"red"; ?>>
       <!-- default value for split is 1 -->
       Split:
       <input type="text" name="split" value=<?php echo $split ?> size="3">
+      &nbsp
+      <span class="tooltiptext">Positive integer!</span>
     </p> <!-- split textfield ends -->
 
     <!-- submit button -->
@@ -140,6 +186,7 @@
     ?>
     </form> <!-- form ends -->
     </div>
+    <div class="footer">Tsz Him Kwan &copy2016</div>
   </body>
 </html>
 
