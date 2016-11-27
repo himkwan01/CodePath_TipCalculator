@@ -186,7 +186,10 @@
     ?>
     </form> <!-- form ends -->
     </div>
-    <div class="footer">Tsz Him Kwan &copy2016</div>
+    <div class="footer">
+    <a href="https://github.com/himkwan01">
+      Tsz Him Kwan &copy2017 CodePath@UCSD
+    </div>
   </body>
 </html>
 
