@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-* [x] Add pop-up text for input format
+* [x] Add pop-up text for valid input format
 
 ## Video Walkthrough
 
