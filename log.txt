@@ -6,12 +6,12 @@ learn about the html and php syntax
     - condition
     - output format (color, size)
 Start to build tipcal
-    - basic output structure            ~ 1 hour
+    - basic output structure            ~ 1  hour
     - get input                         ~ 15 mins
     - validate input(basic)             ~ 10 mins
     - correct output                    ~ 30 mins
-    - arrange output layout             ~ 1 hour
-    - display previous output           ~ 1 hour
+    - arrange output layout             ~ 1  hour
+    - display previous output           ~ 1  hour
 
 11-24-2016 ~ 2 hours
 Improve the output
@@ -21,8 +21,8 @@ Improve the output
 
 11-24-2016 ~ 30 mins
 Add Optional feature - Custome tips
-    - create one more radio button      ~ 5 mins
-    - create a text after that          ~ 5 mins
+    - create one more radio button      ~ 5  mins
+    - create a text after that          ~ 5  mins
     - if custom button is selected,     ~ 10 mins
       assign the value in the textfield 
       to $percentage
@@ -30,7 +30,7 @@ Add Optional feature - Custome tips
 
 11-24-2016 ~ 1 hour
 Add optional feature - Split
-    - Create new textfield              ~ 5 mins
+    - Create new textfield              ~ 5  mins
     - validtion of split                ~ 40 mins
     - create a div for output           ~ 10 mins
 
@@ -42,4 +42,8 @@ Add hover text for input format
     - Add header and footer             ~ 10 mins
 
 11-27-2016 ~ 5 mins
-Add a url to the footer                 ~ 5 mins
+Add a url to the footer                 ~ 5  mins
+
+11-27-2016 ~ 15 mins
+Move stlye to css file                  ~ 10 mins
+Adjust output format                    ~ 5  mins
