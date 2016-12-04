@@ -36,7 +36,7 @@
     $subtotal_text=$_POST?(double)$_POST["subtotal"]:1;
     $percentage=$_POST?$_POST["percentage"]*100:10;
     $cPercentage=$percentage=="OTHER"?(double)$_POST["cPercentage"]:"";
-    $split=$_POST?(double)$_POST["split"]:1;
+    $split=$_POST?$_POST["split"]:1;
     ?>
 
     <center><h1>Tip Calculator<br></h1></center>
@@ -96,7 +96,8 @@
     </p> <!-- tip percentage radio buttons ends -->
     <!-- split textfield if previous input is invalid, change color to red -->
     <p>
-    <font color=<?php echo $split>0?"black":"red"; ?>>
+    <font color=<?php echo ((double)$split>0 && ctype_digit($split))?
+        "black":"red"; ?>>
       <!-- default value for split is 1 -->
       Split:
       <tooltip>
@@ -114,10 +115,10 @@
       $subtotal=(double)$_POST["subtotal"];
       $percentage=($_POST["percentage"]=="OTHER"?
           (double)$_POST["cPercentage"]/100:$_POST["percentage"]);
-      $split=(double)$_POST["split"];
+      $split=$_POST["split"];
       if((string)$subtotal==$_POST["subtotal"] && 
           (double)$percentage>0 && 
-          (double)$split>0){
+          ctype_digit($split) && $split){
         if($subtotal>0){
           $tip=$subtotal*$percentage;
           $total=$subtotal+$tip;
