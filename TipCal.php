@@ -28,7 +28,7 @@
 
   <!-- default method is get, submitted data will be visible in the page address
        field another method is post -->
-  <div class="header">Codepaht pre-work Tip Calculator</div>
+  <div class="header">Codepath pre-work Tip Calculator</div>
   <div class="outter-panel">
   <form id="inner-form" action="Tipcal.php" method="post">
     <?php 
@@ -36,7 +36,7 @@
     $subtotal_text=$_POST?(double)$_POST["subtotal"]:1;
     $percentage=$_POST?$_POST["percentage"]*100:10;
     $cPercentage=$percentage=="OTHER"?(double)$_POST["cPercentage"]:"";
-    $split=$_POST?$_POST["split"]:1;
+    $split=$_POST?$_POST["split"]:'1';
     ?>
 
     <center><h1>Tip Calculator<br></h1></center>
@@ -96,12 +96,13 @@
     </p> <!-- tip percentage radio buttons ends -->
     <!-- split textfield if previous input is invalid, change color to red -->
     <p>
-    <font color=<?php echo ((double)$split>0 && ctype_digit($split))?
+    <font color=<?php echo ((int)$split>0 && ctype_digit($split))?
         "black":"red"; ?>>
       <!-- default value for split is 1 -->
       Split:
       <tooltip>
-      <input type="text" name="split" value=<?php echo $split ?> size="3">
+      <input type="text" name="split" value=
+        <?php echo (int)$split?(int)$split:'1' ?> size="3">
       <span class="tooltiptext">Positive integer!</span>
       </tooltip>
     </p> <!-- split textfield ends -->
