@@ -48,5 +48,9 @@ Add a url to the footer                 ~ 5  mins
 Move stlye to css file                  ~ 10 mins
 Adjust output format                    ~ 5  mins
 
-12-03-2016	~ 10 mins
-fix split take decimals					~ 10 mins
+12-03-2016 ~ 10 mins
+fix split take decimals			~ 10 mins
+
+12-04-2016 ~ 20 mins
+fix split is empty bug                  ~ 10 mins
+improve UI                              ~ 10 mins
