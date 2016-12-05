@@ -34,7 +34,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I know nothing about PHP before I started the pre-work. It is similar to javascript and some other programming languages. Therefore, it is easy to get used to the syntax. Another challenge is to retain the previous input after processing the output and refresh the page. After some researh and tries, I figured out how to get the previous input and display it.  
 
 ## License
 
